@@ -4,12 +4,11 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-contents">
-        <h2>Order your favorite food here</h2>
+        <h4>Your Favorite Morning Snacks, Freshly Prepared</h4>
         <p>Ramji restauratn </p>
         <button>View Menu</button>
       </div>
     </div>
   );
 };
-
 export default Header;
