@@ -2,7 +2,7 @@ import basket_icon from "./basket_icon.png";
 import logo from "./logo.png";
 import ramjilogo from "./ramjilogo.png";
 import ramji from "./ramji.png";
-import header_img from "./header_img.png";
+import headerImage from "./head-banner.png";
 import search_icon from "./search_icon.png";
 import menu_1 from "./menu_1.png";
 import menu_2 from "./menu_2.png";
@@ -37,7 +37,7 @@ export const assets = {
   ramji,
   ramjilogo,
   basket_icon,
-  header_img,
+  headerImage,
   search_icon,
   rating_starts,
   add_icon_green,
