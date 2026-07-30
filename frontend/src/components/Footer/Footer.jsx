@@ -8,10 +8,10 @@ const Footer = () => {
         <div className="footer-content-left">
           <img src={assets.logo} alt="" className="" />
           <p>
-            At Ramji Restaurant, we serve fresh and delicious breakfast, snacks,
-            sweets, and beverages made with authentic flavors and quality
-            ingredients. From crispy kachoris and hot samosas to flavorful poha
-            and sweet jalebis, we bring traditional taste to every meal.
+            Subah ki bhookh ho ya shaam ki chhoti si craving, Ramji Restaurant
+            lekar aaya hai garma-garam Poha, kurkuri Kachori, Samosa aur meethi
+            Jalebi. Har plate mein milega asli desi swaad aur ghar jaisa
+            apnapan. 🌿🍽️
           </p>
           <div className="footer-social-icons">
             <img src={assets.facebook_icon} alt="" />

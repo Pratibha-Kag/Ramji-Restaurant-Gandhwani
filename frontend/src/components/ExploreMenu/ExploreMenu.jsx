@@ -7,9 +7,12 @@ const ExploreMenu = ({ category, setCategory }) => {
     <div className="explore-menu" id="explore-menu">
       <h1>Explore our menu</h1>
       <p className="explore-menu-text">
-        Choose from a diverse interesting menu featuring a detectable array of
-        dishes. Our mission is to satisfy your cravings and elevate your dining
-        experience , one delicious meal at a time.
+        Ramji Restaurant mein har subah milta hai taaza Poha, kurkuri Kachori,
+        garma-garam Samosa aur meethi Jalebi ka asli desi swaad. Pyaar se bana
+        har vyajan, jo har bite ke saath ghar jaisi apnapan ki yaad dilaye. 🍽️🌿
+        Khakhre ke pattal mein parosa gaya garma-garam Poha, kurkuri Kachori aur
+        taazi hari chutney ka asli desi swaad. Ramji Restaurant mein har plate
+        pyaar, parampara aur taazgi ke saath taiyaar hoti hai.
       </p>
       <div className="explore-menu-list">
         {menu_list.map((item, index) => {
