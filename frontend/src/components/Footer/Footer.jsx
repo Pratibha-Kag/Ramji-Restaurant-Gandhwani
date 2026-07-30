@@ -6,14 +6,12 @@ const Footer = () => {
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-content-left">
-          <img src={assets.logo} alt="" />
+          <img src={assets.logo} alt="" className="" />
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since 1966, when designers at Letraset and James Moseley, the
-            librarian at St Bride Printing Library, took a 1914 Cicero
-            translation and scrambled it to make dummy text for Letraset's Body
-            Type sheets.
+            At Ramji Restaurant, we serve fresh and delicious breakfast, snacks,
+            sweets, and beverages made with authentic flavors and quality
+            ingredients. From crispy kachoris and hot samosas to flavorful poha
+            and sweet jalebis, we bring traditional taste to every meal.
           </p>
           <div className="footer-social-icons">
             <img src={assets.facebook_icon} alt="" />
@@ -34,13 +32,13 @@ const Footer = () => {
           <h2>GET IN TOUCH</h2>
           <ul>
             <li>+91-782-841-5612</li>
-            <li>contact@tomato.com</li>
+            <li>pratibhakag.s29@gmail.com</li>
           </ul>
         </div>
       </div>
       <hr />
       <p className="footer-copyright">
-        Copyright 2024 @ Tomato.com -All right Reserved
+        © 2026 Ramji Restaurant. All Rights Reserved.{" "}
       </p>
     </div>
   );

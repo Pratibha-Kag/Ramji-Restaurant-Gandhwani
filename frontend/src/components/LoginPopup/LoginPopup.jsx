@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../context/StoreContext";
 import axios from "axios";
+
 const LoginPopup = ({ setShowLogin }) => {
   const { url, setToken } = useContext(StoreContext);
   const [currState, setCurrState] = useState("Login");
@@ -17,9 +18,9 @@ const LoginPopup = ({ setShowLogin }) => {
     const value = event.target.value;
     setData((data) => ({ ...data, [name]: value }));
   };
-  // useEffect(() => {
-  //   console.log(data, "data");
-  // }, [data]);
+  useEffect(() => {
+    console.log(data, "data");
+  }, [data]);
 
   const onLogin = async (event) => {
     event.preventDefault();

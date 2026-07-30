@@ -1,13 +1,20 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+
 export const StoreContext = createContext(null);
+
 const StoreContextProvider = (props) => {
+
   const [cartItems, setCartitems] = useState({});
+
   // const url = "http://localhost:4000";
+
   const url = "https://ramji-restaurant-gandhwani.onrender.com";
+
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
   const addToCart = async (itemId) => {
+    
     if (!cartItems[itemId]) {
       setCartitems((prev) => ({ ...prev, [itemId]: 1 }));
     } else {
