@@ -2,7 +2,7 @@ import basket_icon from "./basket_icon.png";
 import logo from "./logo.png";
 import ramjilogo from "./ramjilogo.png";
 import ramji from "./ramji.png";
-import headerImage from "./heading-banner.png";
+import headerImage from "./headerr.png";
 import search_icon from "./search_icon.png";
 import menu_1 from "./menu_1.png";
 import menu_2 from "./menu_2.png";
