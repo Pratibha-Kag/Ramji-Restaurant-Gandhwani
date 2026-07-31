@@ -73,9 +73,8 @@ const PlaceOrder = () => {
           color: "#C97B36",
         },
       };
-      console.log("Razorpay Key:", import.meta.env.VITE_RAZORPAY_KEY_ID);
-      console.log("Options:", options);
-      console.log("Razorpay:", window.Razorpay);
+      alert("Key = " + import.meta.env.VITE_RAZORPAY_KEY_ID);
+      alert("Razorpay = " + typeof window.Razorpay);
       const razorpay = new window.Razorpay(options);
 
       razorpay.open();
