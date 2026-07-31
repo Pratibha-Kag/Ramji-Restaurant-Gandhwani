@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-content-left">
-          <img src={assets.logo} alt="" className="" />
+          <img src={assets.logo} alt="" className="footer-logo" />
           <p>
             Subah ki bhookh ho ya shaam ki chhoti si craving, Ramji Restaurant
             lekar aaya hai garma-garam Poha, kurkuri Kachori, Samosa aur meethi

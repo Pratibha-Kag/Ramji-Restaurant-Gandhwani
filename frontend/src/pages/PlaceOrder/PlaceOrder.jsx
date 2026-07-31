@@ -26,30 +26,88 @@ const PlaceOrder = () => {
   };
   const placeOrder = async (event) => {
     event.preventDefault();
-    let orderItems = [];
-    food_list.map((item) => {
-      if (cartItems[item._id] > 0) {
-        let itemInfo = item;
-        itemInfo["quantity"] = cartItems[item._id];
-        orderItems.push(itemInfo);
+
+    try {
+      const response = await axios.post(
+        url + "/api/payment/create-order",
+        {
+          amount: getTotalCartAmount() + 2,
+        },
+        {
+          headers: { token },
+        },
+      );
+
+      if (!response.data.success) {
+        return alert("Unable to create order");
       }
-    });
-    // console.log(orderItems, "order");
-    let orderData = {
-      address: data,
-      items: orderItems,
-      amount: getTotalCartAmount() + 2,
-    };
-    let response = await axios.post(url + "/api/order/place", orderData, {
-      headers: { token },
-    });
-    if (response.data.success) {
-      const { session_url } = response.data;
-      window.location.replace(session_url);
-    } else {
-      alert("Error");
+
+      const order = response.data.order;
+
+      const options = {
+        key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+
+        amount: order.amount,
+
+        currency: order.currency,
+
+        name: "Ramji Restaurant",
+
+        description: "Food Order",
+
+        order_id: order.id,
+
+        handler: async function (paymentResponse) {
+          console.log(paymentResponse);
+
+          alert("Payment Successful 🎉");
+        },
+
+        prefill: {
+          name: data.firstName + " " + data.lastName,
+          email: data.email,
+          contact: data.phone,
+        },
+
+        theme: {
+          color: "#C97B36",
+        },
+      };
+
+      const razorpay = new window.Razorpay(options);
+
+      razorpay.open();
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong");
     }
   };
+  // const placeOrder = async (event) => {
+  //   event.preventDefault();
+  //   let orderItems = [];
+  //   food_list.map((item) => {
+  //     if (cartItems[item._id] > 0) {
+  //       let itemInfo = item;
+  //       itemInfo["quantity"] = cartItems[item._id];
+  //       orderItems.push(itemInfo);
+  //     }
+  //   });
+  //   // console.log(orderItems, "order");
+  //   let orderData = {
+  //     address: data,
+  //     items: orderItems,
+  //     amount: getTotalCartAmount() + 2,
+  //   };
+  //   let response = await axios.post(url + "/api/order/place", orderData, {
+  //     headers: { token },
+  //   });
+  //   if (response.data.success) {
+  //     const { session_url } = response.data;
+  //     window.location.replace(session_url);
+  //   } else {
+  //     alert("Error");
+  //   }
+  // };
   const navigate = useNavigate();
 
   useEffect(() => {

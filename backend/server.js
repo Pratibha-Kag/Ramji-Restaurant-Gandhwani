@@ -7,7 +7,7 @@ import userRouter from "./routes/userRoute.js";
 import dns from "dns"; //ye line youtube wale ne add nhi kri hai error aa rhi isiliye add ki h
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
-
+import paymentRouter from "./routes/paymentRoute.js";
 dns.setServers(["8.8.8.8", "8.8.4.4"]); //ye line youtube wale ne add nhi kri hai error aa rhi isiliye add ki h
 
 //app config
@@ -27,6 +27,7 @@ app.use("/images", express.static("uploads"));
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
+app.use("/api/payment", paymentRouter);
 
 app.get("/", (req, res) => {
   res.send("API Working");
@@ -34,4 +35,5 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Server Started on http://localhost:${port}`);
 });
-console.log("ENV TEST:", process.env.CLOUDINARY_API_KEY);
+console.log("RAZORPAY KEY:", process.env.RAZORPAY_KEY_ID);
+console.log("RAZORPAY SECRET:", process.env.RAZORPAY_KEY_SECRET);

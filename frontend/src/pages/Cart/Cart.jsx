@@ -63,7 +63,12 @@ const Cart = () => {
               </b>
             </div>
           </div>
-          <button onClick={() => navigate("/order")}>
+          <button
+            onClick={() => {
+              console.log("Button Clicked");
+              navigate("/order");
+            }}
+          >
             PROCEED TO CHECKOUT
           </button>
         </div>

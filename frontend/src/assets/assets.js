@@ -1,5 +1,5 @@
 import basket_icon from "./basket_icon.png";
-import logo from "./logo.png";
+import logo from "./footer-logo.png";
 import ramjilogo from "./ramjilogo.png";
 import ramji from "./ramji.png";
 import headerImage from "./headerr.png";

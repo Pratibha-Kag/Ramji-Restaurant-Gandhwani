@@ -58,3 +58,8 @@
     text-align: center;
   }
 }
+.footer-logo {
+  width: 200px; /* apne hisab se 80px, 90px, 110px bhi kar sakte ho */
+  height: auto;
+  margin-bottom: 12px;
+}
