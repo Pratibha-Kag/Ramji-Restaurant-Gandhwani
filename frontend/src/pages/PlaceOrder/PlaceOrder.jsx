@@ -24,10 +24,12 @@ const PlaceOrder = () => {
     const value = event.target.value;
     setData((data) => ({ ...data, [name]: value }));
   };
+
   const placeOrder = async (event) => {
     event.preventDefault();
 
     try {
+      alert("API Calling...");
       const response = await axios.post(
         url + "/api/payment/create-order",
         {
@@ -80,7 +82,12 @@ const PlaceOrder = () => {
       razorpay.open();
     } catch (error) {
       console.log(error);
-      alert("Something went wrong");
+
+      alert(error.message);
+
+      if (error.response) {
+        alert(JSON.stringify(error.response.data));
+      }
     }
   };
   // const placeOrder = async (event) => {
