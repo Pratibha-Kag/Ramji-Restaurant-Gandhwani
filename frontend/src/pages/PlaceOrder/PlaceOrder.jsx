@@ -45,7 +45,22 @@ const PlaceOrder = () => {
       }
 
       const order = response.data.order;
+      let orderItems = [];
 
+      food_list.forEach((item) => {
+        if (cartItems[item._id] > 0) {
+          orderItems.push({
+            ...item,
+            quantity: cartItems[item._id],
+          });
+        }
+      });
+
+      const orderData = {
+        items: orderItems,
+        amount: getTotalCartAmount() + 2,
+        address: data,
+      };
       const options = {
         key: import.meta.env.VITE_RAZORPAY_KEY_ID,
 
@@ -59,12 +74,41 @@ const PlaceOrder = () => {
 
         order_id: order.id,
 
+        // handler: async function (paymentResponse) {
+        //   console.log(paymentResponse);
+
+        //   alert("Payment Successful 🎉");
+        // },
         handler: async function (paymentResponse) {
-          console.log(paymentResponse);
+          try {
+            console.log("VERIFY URL:", url + "/api/payment/verify-payment");
+            const verifyResponse = await axios.post(
+              url + "/api/payment/verify-payment",
+              {
+                razorpay_order_id: paymentResponse.razorpay_order_id,
+                razorpay_payment_id: paymentResponse.razorpay_payment_id,
+                razorpay_signature: paymentResponse.razorpay_signature,
+                orderData,
+              },
+              {
+                headers: {
+                  token,
+                },
+              },
+            );
 
-          alert("Payment Successful 🎉");
+            if (verifyResponse.data.success) {
+              alert("Payment Successful 🎉");
+
+              navigate("/myorders");
+            } else {
+              alert("Payment Verification Failed");
+            }
+          } catch (error) {
+            console.log(error);
+            alert("Something went wrong");
+          }
         },
-
         prefill: {
           name: data.firstName + " " + data.lastName,
           email: data.email,

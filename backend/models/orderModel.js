@@ -8,7 +8,11 @@ const orderSchema = new mongoose.Schema({
   status: { type: String, default: "Food processing" },
   date: { type: Date, default: Date.now() },
   payment: { type: Boolean, default: false },
+  //razorpay
+  razorpay_order_id: String,
+  razorpay_payment_id: String,
 });
+
 const orderModel =
   mongoose.models.order || mongoose.model("order", orderSchema);
 export default orderModel;

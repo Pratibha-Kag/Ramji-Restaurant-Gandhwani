@@ -27,6 +27,7 @@ app.use("/images", express.static("uploads"));
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
+console.log("Payment Router Loaded");
 app.use("/api/payment", paymentRouter);
 
 app.get("/", (req, res) => {
