@@ -14,10 +14,10 @@ const addFood = async (req, res) => {
   });
   try {
     await food.save();
-    console.log("Saved Food:", food);
+    // console.log("Saved Food:", food);
     const foods = await foodModel.find({});
-    console.log("Total Foods:", foods.length);
-    console.log("All Foods:", foods);
+    // console.log("Total Foods:", foods.length);
+    // console.log("All Foods:", foods);
     res.json({ success: true, message: "Food Added" });
   } catch (error) {
     console.log(error);

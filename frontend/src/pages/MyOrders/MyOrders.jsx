@@ -13,8 +13,8 @@ const MyOrders = () => {
       {},
       { headers: { token } },
     );
-    setData(response.data.data);
     // console.log(response.data.data);
+    setData(response.data.data);
   };
   useEffect(() => {
     if (token) {

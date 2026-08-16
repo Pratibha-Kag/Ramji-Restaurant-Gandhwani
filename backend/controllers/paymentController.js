@@ -29,7 +29,7 @@ export const createOrder = async (req, res) => {
   }
 };
 export const verifyPayment = async (req, res) => {
-  console.log("Verify Payment API Hit");
+  // console.log("Verify Payment API Hit");
   try {
     const {
       razorpay_order_id,
