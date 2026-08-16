@@ -29,7 +29,7 @@ const PlaceOrder = () => {
     event.preventDefault();
 
     try {
-      alert("API Calling...");
+      // alert("API Calling...");
       const response = await axios.post(
         url + "/api/payment/create-order",
         {
@@ -119,8 +119,8 @@ const PlaceOrder = () => {
           color: "#C97B36",
         },
       };
-      alert("Key = " + import.meta.env.VITE_RAZORPAY_KEY_ID);
-      alert("Razorpay = " + typeof window.Razorpay);
+      // alert("Key = " + import.meta.env.VITE_RAZORPAY_KEY_ID);
+      // alert("Razorpay = " + typeof window.Razorpay);
       const razorpay = new window.Razorpay(options);
 
       razorpay.open();
